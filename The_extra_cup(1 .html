@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Extra Cup</title>
+    <style>
+        body {
+            background-color: rgba(235, 229, 229, 0.9);
+            margin: 0em 0em 0em 0em;
+            border: solid;
+            border-color: black;
+            border-radius: 2em;
+            border-width: 0.2em;
+            padding: 2.5em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+           }
+        .lable {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;            
+            font-size: 4em;
+            line-height: 1em;
+            letter-spacing: 0.1em;
+            margin: 0.5em 0em 0.5em;}
+        .dropbtn {
+            background-color: #808080;
+            color: white;
+            padding: 0.7em;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            border-radius: 9em;
+            cursor: pointer;}
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: black;}
+        .dropdown {
+            position: relative;
+            display: inline-block;}
+        .dropdown-content {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+            border-radius: 0.4em;
+            display: none;
+            position: center;
+            background-color: #f1f1f1;
+            min-width: 8em;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;}
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .dropdown-content a:hover {
+            background-color: rgb(236, 221, 221)}
+        .show {
+            display:block;}
+        i {
+            border: solid white;
+            border-width: 0 2px  2px 0;
+            display: inline-block;
+            padding: 4px;}
+        .down {
+        transform: rotate(45deg);
+        webkit-transform: rotate(45deg);}
+    </style>
+</head>
+<body>
+    <header class="lable">
+        <div>THE<br>EXTRA<br>CUP</div>
+    </header>
+    <main>
+        <script> 
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            }
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    let dropdowns = document.getElementsByClassName("dropdown-content");
+                    let i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        let openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                            } 
+                        }
+                    }
+            }
+        </script>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Order Coffee <i class="arrow down"></i></button>
+            <div id="myDropdown" class="dropdown-content">
+                <p><input type="checkbox" id="1" name="light roast" value="light roast" checked=""> Light Roast</p>
+                <p><input type="checkbox" id="2" name="dark roast" value="dark roast" checked=""> Dark Roast</p>
+                <p><input type="checkbox" id="3" name="single shot" value="single shot" checked=""> Single Shot</p>
+                <p><input type="checkbox" id="4" name="double shot" value="double shot" checked=""> Double Shot</p>
+                <a href="#" style="text-align:center;"><u>Send to barista</u></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
